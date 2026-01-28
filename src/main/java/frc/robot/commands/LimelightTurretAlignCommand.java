@@ -8,6 +8,9 @@ import frc.robot.Constants;
 public class LimelightTurretAlignCommand extends Command {
     private final Limelight limelight;
     private final TurretSubsystem turretSubsystem;
+
+    
+
     
     public LimelightTurretAlignCommand(Limelight limelight, TurretSubsystem turretSubsystem) {
         this.limelight = limelight;
@@ -30,14 +33,14 @@ public class LimelightTurretAlignCommand extends Command {
                  double rotateSpeed = -tx * Constants.TurretConstants.kP;
                  turretSubsystem.rotateTurret(rotateSpeed);
 
-            } else if (limelight.getTagID() == 5 || limelight.getTagID() == 27) {
+            } else if (limelight.getTagID() == 8 || limelight.getTagID() == 24) {
 
                 LimelightHelpers.setPipelineIndex("limelight-bb", 1);
                  double tx = limelight.getTX();
                  double rotateSpeed = -tx * Constants.TurretConstants.kP;
                  turretSubsystem.rotateTurret(rotateSpeed);
 
-            } else if(limelight.getTagID() == 11 || limelight.getTagID() == 21) {
+            } else if(limelight.getTagID() == 11 || limelight.getTagID() == 27) {
 
                 LimelightHelpers.setPipelineIndex("limelight-bb", 2);
                  double tx = limelight.getTX();
