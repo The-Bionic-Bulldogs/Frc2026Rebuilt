@@ -20,8 +20,11 @@ public final class Constants {
     public static final String LimelightName = "limelight-bb";
   }
   public static class TurretConstants {
-    public static final int kTurretOuttakeMotorPort = 12;
-    public static final int kTurretRotationMotorPort = 13;
+    public static final int kTurretOuttakeMotorPort = 13;
+    public static final int kTurretRotationMotorPort = 14;
+    public static final int kFeederFirstMotorPort = 15;
+    public static final int kFeederSecondMotorPort = 16;
+    public static final int kRollerMotorPort = 17;
     // PID values for turret rotation
     public static final double kP = 0.02;
     public static final double kI = 0.0;
@@ -29,6 +32,14 @@ public final class Constants {
 
     public static final double kRotateSpeed = 0.3;
     public static final double kOuttakeSpeed = 1.0;
+    public static final double kFeederSpeed = 1.0;
+    public static final double kRollerSpeed = 1.0;
   }
 
+  public static class IntakeConstants {
+    public static final int kIntakeMotorPort = 18;
+    public static final int kIntakerMotorPort = 19;
+    public static final double kIntakeSpeed = 1.0;
+    public static final double kIntakerSpeed = 1.0;
+  }
 }
