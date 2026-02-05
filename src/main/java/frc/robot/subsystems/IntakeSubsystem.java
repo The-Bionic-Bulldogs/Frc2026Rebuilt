@@ -21,19 +21,19 @@ public class IntakeSubsystem extends SubsystemBase {
     }
 
     public Command extendIntaker() {
-        return runOnce(() -> intakerMotor.set(IntakeConstants.kIntakerSpeed));
+         return runOnce(() -> intakerMotor.set(IntakeConstants.kIntakerSpeed));
     }
 
     public Command retractIntaker() {
         return runOnce(() -> intakerMotor.set(-IntakeConstants.kIntakerSpeed));
     }
 
-    public void stopIntaker() {
-        intakerMotor.set(0);
+    public Command stopIntaker() {
+        return runOnce(() -> intakerMotor.set(0));
     }
 
-    public void stopIntake() {
-        intakeMotor.set(0);
+    public Command stopIntake() {
+        return runOnce(() -> intakeMotor.set(0));
     }
 
 }

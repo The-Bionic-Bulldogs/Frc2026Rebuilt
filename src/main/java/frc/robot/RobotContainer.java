@@ -31,6 +31,7 @@ public class RobotContainer {
     // Subsystems
     private Limelight m_limelight = new Limelight();
     private TurretSubsystem m_turretSubsystem = new TurretSubsystem();
+    private IntakeSubsystem m_intakeSubsystem = new IntakeSubsystem();
 
     public final CommandSwerveDrivetrain drivetrain =
             TunerConstants.createDrivetrain();
@@ -56,8 +57,8 @@ public class RobotContainer {
     private final Telemetry logger = new Telemetry(MaxSpeed);
 
     // Controllers
-    private final CommandXboxController dj = new CommandXboxController(0);
-    private final CommandXboxController oj = new CommandXboxController(1);
+    private final CommandXboxController dj = new CommandXboxController(Constants.OperatorConstants.kDriverControllerPort);
+    private final CommandXboxController oj = new CommandXboxController(Constants.OperatorConstants.kOperatorControllerPort);
 
     // Auto chooser
     private SendableChooser<Command> autoChooser = new SendableChooser<>();
@@ -96,8 +97,10 @@ public class RobotContainer {
         );
 
         // Turret controls
-        oj.y().whileTrue(m_turretSubsystem.startOuttake())
-                .onFalse(m_turretSubsystem.stopOuttake());
+        oj.rightTrigger().whileTrue(m_turretSubsystem.startOuttake()).onFalse(m_turretSubsystem.stopOuttake());
+        oj.leftBumper().whileTrue(m_intakeSubsystem.runIntake()).onFalse(m_intakeSubsystem.stopIntake());
+        oj.y().whileTrue(m_intakeSubsystem.extendIntaker()).onFalse(m_intakeSubsystem.stopIntaker());
+        oj.a().whileTrue(m_intakeSubsystem.retractIntaker()).onFalse(m_intakeSubsystem.stopIntaker());
 
         oj.leftBumper().onTrue(
                 new InstantCommand(() ->

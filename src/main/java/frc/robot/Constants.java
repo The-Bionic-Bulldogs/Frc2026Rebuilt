@@ -15,6 +15,7 @@ package frc.robot;
 public final class Constants {
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
+    public static final int kOperatorControllerPort = 1;
   }
   public static class LimelightConstants {
     public static final String LimelightName = "limelight-bb";
@@ -41,5 +42,11 @@ public final class Constants {
     public static final int kIntakerMotorPort = 19;
     public static final double kIntakeSpeed = 1.0;
     public static final double kIntakerSpeed = 1.0;
+  }
+
+  public static class ClimberConstants {
+    public static final int kLeftClimberMotorPort = 20;
+    public static final int kRightClimberMotorPort = 21;
+    public static final double kClimbSpeed = 1.0;
   }
 }
