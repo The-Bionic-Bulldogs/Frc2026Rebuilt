@@ -25,7 +25,7 @@ public final class Constants {
     public static final int kTurretRotationMotorPort = 14;
     public static final int kFeederFirstMotorPort = 15;
     public static final int kFeederSecondMotorPort = 16;
-    public static final int kRollerMotorPort = 17;
+        public static final int kRollerMotorPort = 17;
     // PID values for turret rotation
     public static final double kP = 0.02;
     public static final double kI = 0.0;
@@ -42,11 +42,18 @@ public final class Constants {
     public static final int kIntakerMotorPort = 19;
     public static final double kIntakeSpeed = 1.0;
     public static final double kIntakerSpeed = 1.0;
+    //intaker motion magic values
+    public static final double MaxVelocity = 38.5;
+    public static final double MaxAcceleration = 507.0;
+    public static final double ExtendedPosition = 10.0; //placeholder value
+    public static final double RetractedPosition = 0.0; //placeholder value
   }
 
   public static class ClimberConstants {
     public static final int kLeftClimberMotorPort = 20;
     public static final int kRightClimberMotorPort = 21;
     public static final double kClimbSpeed = 1.0;
+    public static final double MaxVelocity = 38.5;  //placeholder value, needs to be tuned
+    public static final double MaxAcceleration = 507.0; //placeholder value, needs to be tuned
   }
 }

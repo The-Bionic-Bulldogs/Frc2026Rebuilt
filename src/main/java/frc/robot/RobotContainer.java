@@ -99,8 +99,8 @@ public class RobotContainer {
         // Turret controls
         oj.rightTrigger().whileTrue(m_turretSubsystem.startOuttake()).onFalse(m_turretSubsystem.stopOuttake());
         oj.leftBumper().whileTrue(m_intakeSubsystem.runIntake()).onFalse(m_intakeSubsystem.stopIntake());
-        oj.y().whileTrue(m_intakeSubsystem.extendIntaker()).onFalse(m_intakeSubsystem.stopIntaker());
-        oj.a().whileTrue(m_intakeSubsystem.retractIntaker()).onFalse(m_intakeSubsystem.stopIntaker());
+        oj.y().onTrue(m_intakeSubsystem.moveIntakerToPosition(Constants.IntakeConstants.ExtendedPosition));
+        oj.a().onTrue(m_intakeSubsystem.moveIntakerToPosition(Constants.IntakeConstants.RetractedPosition));
 
         oj.leftBumper().onTrue(
                 new InstantCommand(() ->
