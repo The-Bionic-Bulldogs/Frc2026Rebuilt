@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.wpilibj.motorcontrol.Talon;
 import frc.robot.Constants;
+import com.ctre.phoenix6.configs.SoftwareLimitSwitchConfigs;
 
 public class TurretSubsystem extends SubsystemBase {
   private final int turretOuttakeMotorPort = Constants.TurretConstants.kTurretOuttakeMotorPort;
@@ -19,12 +20,27 @@ public class TurretSubsystem extends SubsystemBase {
   private final TalonFX FeederMotorTwo = new TalonFX(Constants.TurretConstants.kFeederSecondMotorPort);
   private final TalonFX RollerMotor = new TalonFX(Constants.TurretConstants.kRollerMotorPort);
 
-  public TurretSubsystem() {
+  public void init() {
+    TalonFXConfiguration config = new TalonFXConfiguration();
+    var softLimitConfig = new SoftwareLimitSwitchConfigs();
+    softLimitConfig.ForwardSoftLimitEnable = true;
+    softLimitConfig.ForwardSoftLimitThreshold = Constants.TurretConstants.kSoftlimit;
+    softLimitConfig.ReverseSoftLimitEnable = true;
+    softLimitConfig.ReverseSoftLimitThreshold = Constants.TurretConstants.kMinLimit;
+    config.SoftwareLimitSwitch = softLimitConfig;
+    turretRotationMotor.getConfigurator().apply(config);
+
+    turretRotationMotor.setPosition(0);
+
     turretOuttakeMotor.setNeutralMode(NeutralModeValue.Coast);
     turretRotationMotor.setNeutralMode(NeutralModeValue.Brake);
     FeederMotorOne.setNeutralMode(NeutralModeValue.Coast);
     FeederMotorTwo.setNeutralMode(NeutralModeValue.Coast);
     RollerMotor.setNeutralMode(NeutralModeValue.Coast);
+  }
+   
+  public TurretSubsystem() {
+    init();
   }
 
   public Command startOuttake() {
@@ -44,8 +60,8 @@ public class TurretSubsystem extends SubsystemBase {
     });
     
   }
-  public Command rotateTurret(double speed) {
+  public void rotateTurret(double speed) {
     double limitedSpeed = MathUtil.clamp(speed, -Constants.TurretConstants.kRotateSpeed, Constants.TurretConstants.kRotateSpeed);
-    return runOnce(() -> turretRotationMotor.set(limitedSpeed));
+    turretRotationMotor.set(limitedSpeed);
   }
 }

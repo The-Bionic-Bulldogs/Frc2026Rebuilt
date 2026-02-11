@@ -30,8 +30,10 @@ public final class Constants {
     public static final double kP = 0.02;
     public static final double kI = 0.0;
     public static final double kD = 0.0;
+    public static final double kSoftlimit = 90.0; //placeholder value, needs to be tuned
+    public static final double kMinLimit = -90.0; //placeholder value, needs to be tuned
 
-    public static final double kRotateSpeed = 0.3;
+    public static final double kRotateSpeed = 0.1;
     public static final double kOuttakeSpeed = 1.0;
     public static final double kFeederSpeed = 1.0;
     public static final double kRollerSpeed = 1.0;
