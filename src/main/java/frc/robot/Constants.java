@@ -14,6 +14,7 @@ package frc.robot;
  */
 public final class Constants {
   public static class OperatorConstants {
+    //driver controller is the primary controller, operator controller is the secondary controller
     public static final int kDriverControllerPort = 0;
     public static final int kOperatorControllerPort = 1;
   }
@@ -32,7 +33,7 @@ public final class Constants {
     public static final double kD = 0.0;
     public static final double kSoftlimit = 90.0; //placeholder value, needs to be tuned
     public static final double kMinLimit = -90.0; //placeholder value, needs to be tuned
-
+    // Maximum rotation speed for the turret, needs to be tuned
     public static final double kRotateSpeed = 0.1;
     public static final double kOuttakeSpeed = 1.0;
     public static final double kFeederSpeed = 1.0;

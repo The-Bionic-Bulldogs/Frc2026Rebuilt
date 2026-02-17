@@ -26,6 +26,8 @@ public class IntakeSubsystem extends SubsystemBase {
     config.MotionMagic = motionConfig;
     intakerMotor.getConfigurator().apply(config);
 
+    intakerMotor.setPosition(0);
+
     intakeMotor.setNeutralMode(NeutralModeValue.Coast);
     intakerMotor.setNeutralMode(NeutralModeValue.Brake);
     }

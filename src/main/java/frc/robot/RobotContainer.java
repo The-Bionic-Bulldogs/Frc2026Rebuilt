@@ -74,6 +74,13 @@ public class RobotContainer {
     autoChooser = AutoBuilder.buildAutoChooser("placeHolder");
     SmartDashboard.putData("Auto Mode", autoChooser);
 
+    new EventTrigger("Outtake").onTrue(m_turretSubsystem.startOuttake());
+    new EventTrigger("StopOuttake").onTrue(m_turretSubsystem.stopOuttake());
+    new EventTrigger("ExtendIntaker").onTrue(m_intakeSubsystem.moveIntakerToPosition(Constants.IntakeConstants.ExtendedPosition));
+    new EventTrigger("RetractIntaker").onTrue(m_intakeSubsystem.moveIntakerToPosition(Constants.IntakeConstants.RetractedPosition));
+    new EventTrigger("Intake").onTrue(m_intakeSubsystem.runIntake());
+    new EventTrigger("StopIntake").onTrue(m_intakeSubsystem.stopIntake());
+    
     configureBindings();
 }
 
