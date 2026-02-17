@@ -20,7 +20,7 @@ public class TurretSubsystem extends SubsystemBase {
   private final TalonFX turretRotationMotor = new TalonFX(TurretConstants.kTurretRotationMotorPort);
   private final TalonFX FeederMotorOne = new TalonFX(Constants.TurretConstants.kFeederFirstMotorPort);
   private final TalonFX FeederMotorTwo = new TalonFX(Constants.TurretConstants.kFeederSecondMotorPort);
-  private final TalonFX RollerMotor = new TalonFX(Constants.TurretConstants.kRollerMotorPort);
+//  private final TalonFX RollerMotor = new TalonFX(Constants.TurretConstants.kRollerMotorPort);
 
   // Initialize motors, set soft limits for turret rotation, and set neutral modes
   public void init() {
@@ -39,7 +39,7 @@ public class TurretSubsystem extends SubsystemBase {
     turretRotationMotor.setNeutralMode(NeutralModeValue.Brake);
     FeederMotorOne.setNeutralMode(NeutralModeValue.Coast);
     FeederMotorTwo.setNeutralMode(NeutralModeValue.Coast);
-    RollerMotor.setNeutralMode(NeutralModeValue.Coast);
+  //  RollerMotor.setNeutralMode(NeutralModeValue.Coast);
   }
    //calls init
   public TurretSubsystem() {
@@ -60,9 +60,9 @@ public class TurretSubsystem extends SubsystemBase {
     // Then run the rest continuously until canceled
     run(() -> {
       turretOuttakeMotor.set(Constants.TurretConstants.kOuttakeSpeed);
-      FeederMotorOne.set(-Constants.TurretConstants.kFeederSpeed);
+      FeederMotorOne.set(Constants.TurretConstants.kFeederSpeed);
       FeederMotorTwo.set(Constants.TurretConstants.kFeederSpeed);
-      RollerMotor.set(Constants.TurretConstants.kRollerSpeed);
+    //  RollerMotor.set(Constants.TurretConstants.kRollerSpeed);
     })
   );
   }
@@ -74,7 +74,7 @@ public class TurretSubsystem extends SubsystemBase {
       turretOuttakeMotor.set(0.0);
       FeederMotorOne.set(0.0);
       FeederMotorTwo.set(0.0);
-      RollerMotor.set(0.0);
+      //RollerMotor.set(0.0);
     });
     
   }

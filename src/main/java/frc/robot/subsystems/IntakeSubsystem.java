@@ -24,6 +24,11 @@ public class IntakeSubsystem extends SubsystemBase {
     motionConfig.MotionMagicCruiseVelocity = Constants.IntakeConstants.MaxVelocity; //38.5
     motionConfig.MotionMagicAcceleration = Constants.IntakeConstants.MaxAcceleration; //507
     config.MotionMagic = motionConfig;
+
+    config.Slot0.kP = 0.1;   // tune later
+    config.Slot0.kI = 0.0;
+    config.Slot0.kD = 0.0;
+
     intakerMotor.getConfigurator().apply(config);
 
     intakerMotor.setPosition(0);
