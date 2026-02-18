@@ -30,8 +30,9 @@ public class RobotContainer {
 
     // Subsystems
     private Limelight m_limelight = new Limelight();
-    private TurretSubsystem m_turretSubsystem = new TurretSubsystem();
+    private OuttakeSubsystem m_turretSubsystem = new OuttakeSubsystem();
     private IntakeSubsystem m_intakeSubsystem = new IntakeSubsystem();
+    private RotationSubsystem m_rotationSubsystem = new RotationSubsystem();
 
     public final CommandSwerveDrivetrain drivetrain =
             TunerConstants.createDrivetrain();
@@ -66,7 +67,7 @@ public class RobotContainer {
     public RobotContainer() {
 
     m_turretSubsystem.setDefaultCommand(
-        new LimelightTurretAlignCommand(m_limelight, m_turretSubsystem)
+        new LimelightTurretAlignCommand(m_limelight, m_rotationSubsystem)
     );
 
     
@@ -109,13 +110,7 @@ public class RobotContainer {
         oj.y().onTrue(m_intakeSubsystem.moveIntakerToPosition(Constants.IntakeConstants.ExtendedPosition));
         oj.a().onTrue(m_intakeSubsystem.moveIntakerToPosition(Constants.IntakeConstants.RetractedPosition));
 
-        oj.leftBumper().onTrue(
-                new InstantCommand(() ->
-                        m_turretSubsystem.setDefaultCommand(
-                                new TurretAutoStopCommand(
-                                        m_turretSubsystem, m_limelight)))
-        );
-
+      
         // Reset heading
         dj.back().onTrue(
                 drivetrain.runOnce(() -> drivetrain.seedFieldCentric())

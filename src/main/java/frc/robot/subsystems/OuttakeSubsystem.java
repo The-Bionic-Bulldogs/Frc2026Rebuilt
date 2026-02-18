@@ -13,11 +13,10 @@ import frc.robot.Constants.TurretConstants;
 
 import com.ctre.phoenix6.configs.SoftwareLimitSwitchConfigs;
 
-public class TurretSubsystem extends SubsystemBase {
+public class OuttakeSubsystem extends SubsystemBase {
   
   //motors
   private final TalonFX turretOuttakeMotor = new TalonFX(TurretConstants.kTurretOuttakeMotorPort);
-  private final TalonFX turretRotationMotor = new TalonFX(TurretConstants.kTurretRotationMotorPort);
   private final TalonFX FeederMotorOne = new TalonFX(Constants.TurretConstants.kFeederFirstMotorPort);
   private final TalonFX FeederMotorTwo = new TalonFX(Constants.TurretConstants.kFeederSecondMotorPort);
 //  private final TalonFX RollerMotor = new TalonFX(Constants.TurretConstants.kRollerMotorPort);
@@ -31,18 +30,16 @@ public class TurretSubsystem extends SubsystemBase {
     softLimitConfig.ReverseSoftLimitEnable = true;
     softLimitConfig.ReverseSoftLimitThreshold = Constants.TurretConstants.kMinLimit;
     config.SoftwareLimitSwitch = softLimitConfig;
-    turretRotationMotor.getConfigurator().apply(config);
-
-    turretRotationMotor.setPosition(0);
+    
 
     turretOuttakeMotor.setNeutralMode(NeutralModeValue.Coast);
-    turretRotationMotor.setNeutralMode(NeutralModeValue.Brake);
+
     FeederMotorOne.setNeutralMode(NeutralModeValue.Coast);
     FeederMotorTwo.setNeutralMode(NeutralModeValue.Coast);
   //  RollerMotor.setNeutralMode(NeutralModeValue.Coast);
   }
    //calls init
-  public TurretSubsystem() {
+  public OuttakeSubsystem() {
     init();
   }
     // Command to start outtake sequence
@@ -78,9 +75,5 @@ public class TurretSubsystem extends SubsystemBase {
     });
     
   }
-  // Command to rotate turret at a given speed, with limits and Limelight vison
-  public void rotateTurret(double speed) {
-    double limitedSpeed = MathUtil.clamp(speed, -Constants.TurretConstants.kRotateSpeed, Constants.TurretConstants.kRotateSpeed);
-    turretRotationMotor.set(limitedSpeed);
-  }
+ 
 }
