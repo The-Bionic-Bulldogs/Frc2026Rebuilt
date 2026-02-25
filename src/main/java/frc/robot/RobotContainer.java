@@ -10,7 +10,6 @@ import com.pathplanner.lib.auto.AutoBuilder;
 import com.pathplanner.lib.events.EventTrigger;
 
 import edu.wpi.first.math.MathUtil;
-import edu.wpi.first.math.kinematics.ChassisSpeeds;
 import static edu.wpi.first.units.Units.MetersPerSecond;
 import static edu.wpi.first.units.Units.RadiansPerSecond;
 import static edu.wpi.first.units.Units.RotationsPerSecond;
@@ -21,7 +20,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 
-import frc.robot.Constants;
+
 import frc.robot.generated.TunerConstants;
 import frc.robot.subsystems.*;
 import frc.robot.commands.*;
@@ -66,7 +65,7 @@ public class RobotContainer {
 
     public RobotContainer() {
 
-    m_turretSubsystem.setDefaultCommand(
+    m_rotationSubsystem.setDefaultCommand(
         new LimelightTurretAlignCommand(m_limelight, m_rotationSubsystem)
     );
 
@@ -105,9 +104,16 @@ public class RobotContainer {
         );
 
         // Turret controls
+        //Outtake Button
         oj.rightTrigger().whileTrue(m_turretSubsystem.startOuttake()).onFalse(m_turretSubsystem.stopOuttake());
+        //Intake Button
         oj.leftBumper().whileTrue(m_intakeSubsystem.runIntake()).onFalse(m_intakeSubsystem.stopIntake());
+        //manual intaker extend/retract buttons
+        oj.povUp().whileTrue(m_intakeSubsystem.extendIntaker()).onFalse(m_intakeSubsystem.stopIntaker());
+        oj.povDown().whileTrue(m_intakeSubsystem.retractIntaker()).onFalse(m_intakeSubsystem.stopIntaker());
+        //Intaker Extend Button
         oj.y().onTrue(m_intakeSubsystem.moveIntakerToPosition(Constants.IntakeConstants.ExtendedPosition));
+        //Intaker Retract Button
         oj.a().onTrue(m_intakeSubsystem.moveIntakerToPosition(Constants.IntakeConstants.RetractedPosition));
 
       

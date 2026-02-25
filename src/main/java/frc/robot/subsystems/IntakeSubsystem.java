@@ -43,15 +43,15 @@ public class IntakeSubsystem extends SubsystemBase {
     }
 
     public Command runIntake() {
-        return runOnce(() -> intakeMotor.set(IntakeConstants.kIntakeSpeed));
+        return runOnce(() -> intakeMotor.set(-IntakeConstants.kIntakeSpeed));
     }
 
     public Command extendIntaker() {
-         return runOnce(() -> intakerMotor.set(IntakeConstants.kIntakerSpeed));
+         return runOnce(() -> intakerMotor.set(-IntakeConstants.kIntakerSpeed));
     }
 
     public Command retractIntaker() {
-        return runOnce(() -> intakerMotor.set(-IntakeConstants.kIntakerSpeed));
+        return runOnce(() -> intakerMotor.set(IntakeConstants.kIntakerSpeed));
     }
 
     public Command stopIntaker() {

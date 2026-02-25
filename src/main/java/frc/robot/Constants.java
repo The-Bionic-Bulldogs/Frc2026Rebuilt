@@ -33,6 +33,7 @@ public final class Constants {
     public static final double kD = 0.0;
     public static final double kSoftlimit = 90.0; //placeholder value, needs to be tuned
     public static final double kMinLimit = -90.0; //placeholder value, needs to be tuned
+    public static final double kStartingPos = 90.0;
     // Maximum rotation speed for the turret, needs to be tuned
     public static final double kRotateSpeed = 0.1;
     public static final double kOuttakeSpeed = 1.0;
@@ -44,7 +45,7 @@ public final class Constants {
     public static final int kIntakeMotorPort = 18;
     public static final int kIntakerMotorPort = 19;
     public static final double kIntakeSpeed = 1.0;
-    public static final double kIntakerSpeed = 1.0;
+    public static final double kIntakerSpeed = 0.08; //placeholder value, needs to be tuned
     //intaker motion magic values
     public static final double MaxVelocity = 38.5;
     public static final double MaxAcceleration = 507.0;

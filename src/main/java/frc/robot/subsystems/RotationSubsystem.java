@@ -23,7 +23,7 @@ public void init() {
     config.SoftwareLimitSwitch = softLimitConfig;
     turretRotationMotor.getConfigurator().apply(config);
 
-    turretRotationMotor.setPosition(0);
+    turretRotationMotor.setPosition(Constants.TurretConstants.kStartingPos);
 
     
     turretRotationMotor.setNeutralMode(NeutralModeValue.Brake);
