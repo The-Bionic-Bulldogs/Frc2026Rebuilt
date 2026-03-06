@@ -1,0 +1,67 @@
+{
+  "version": "2025.0",
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 0.5585592011412266,
+        "y": 6.926790299564089
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 1.5587413681727909,
+        "y": 6.0669998740423745
+      },
+      "isLocked": false,
+      "linkedName": "MiddlePathStepThreeEnd"
+    },
+    {
+      "anchor": {
+        "x": 2.175891583452211,
+        "y": 5.632924393723252
+      },
+      "prevControl": {
+        "x": 1.2071626588389024,
+        "y": 6.395876988212643
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "MiddlePathStepFourEnd"
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "pointTowardsZones": [],
+  "eventMarkers": [
+    {
+      "name": "StopIntake",
+      "waypointRelativePos": 0.0,
+      "endWaypointRelativePos": null,
+      "command": null
+    },
+    {
+      "name": "Outtake",
+      "waypointRelativePos": 1.0,
+      "endWaypointRelativePos": null,
+      "command": null
+    }
+  ],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0,
+    "nominalVoltage": 12.0,
+    "unlimited": false
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": -42.70938995736155
+  },
+  "reversed": false,
+  "folder": "MiddlePaths",
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": -88.7546357332317
+  },
+  "useDefaultConstraints": true
+}

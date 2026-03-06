@@ -28,15 +28,15 @@ public final class Constants {
     public static final int kFeederSecondMotorPort = 16;
         public static final int kRollerMotorPort = 17;
     // PID values for turret rotation
-    public static final double kP = 0.02;
+    public static final double kP = 0.06;
     public static final double kI = 0.0;
     public static final double kD = 0.0;
     public static final double kSoftlimit = 90.0; //placeholder value, needs to be tuned
-    public static final double kMinLimit = -90.0; //placeholder value, needs to be tuned
+    public static final double kMinLimit = -125.0; //placeholder value, needs to be tuned
     public static final double kStartingPos = 90.0;
     // Maximum rotation speed for the turret, needs to be tuned
-    public static final double kRotateSpeed = 0.1;
-    public static final double kOuttakeSpeed = 1.0;
+    public static final double kRotateSpeed = 0.52;
+    public static final double kOuttakeSpeed = 0.72;
     public static final double kFeederSpeed = 1.0;
     public static final double kRollerSpeed = 1.0;
   }
@@ -44,20 +44,22 @@ public final class Constants {
   public static class IntakeConstants {
     public static final int kIntakeMotorPort = 18;
     public static final int kIntakerMotorPort = 19;
-    public static final double kIntakeSpeed = 1.0;
-    public static final double kIntakerSpeed = 0.08; //placeholder value, needs to be tuned
+    public static final double kIntakeSpeed = 0.5;
+    public static final double kIntakerSpeed = 0.12; //placeholder value, needs to be tuned
     //intaker motion magic values
-    public static final double MaxVelocity = 38.5;
-    public static final double MaxAcceleration = 507.0;
-    public static final double ExtendedPosition = 10.0; //placeholder value
+    public static final double MaxVelocity = 10.7;
+    public static final double MaxAcceleration = 26.25;
+    public static final double ExtendedPosition = -21; //23
     public static final double RetractedPosition = 0.0; //placeholder value
+    public static final double kSoftlimit = 0.0; //placeholder value, needs to be tuned
+    public static final double kMinLimit = -18.0; //placeholder value, needs to be tuned
   }
 
   public static class ClimberConstants {
     public static final int kLeftClimberMotorPort = 20;
     public static final int kRightClimberMotorPort = 21;
     public static final double kClimbSpeed = 1.0;
-    public static final double MaxVelocity = 38.5;  //placeholder value, needs to be tuned
-    public static final double MaxAcceleration = 507.0; //placeholder value, needs to be tuned
+    public static final double MaxVelocity = 10.7;  //placeholder value, needs to be tuned
+    public static final double MaxAcceleration = 26.25; //placeholder value, needs to be tuned
   }
 }

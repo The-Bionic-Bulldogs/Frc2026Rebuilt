@@ -89,14 +89,15 @@ public class RobotContainer {
 
     private void configureBindings() {
 
+        double driveSensitivity = 0.5;
         double rotationSensitivity = 0.5;
 
         drivetrain.setDefaultCommand(
                 drivetrain.applyRequest(() ->
                         drive.withVelocityX(
-                                        MathUtil.applyDeadband(dj.getLeftY(), 0.1) * MaxSpeed)
+                                        MathUtil.applyDeadband(dj.getLeftY(), 0.1) * MaxSpeed * driveSensitivity)
                                 .withVelocityY(
-                                        MathUtil.applyDeadband(dj.getLeftX(), 0.1) * MaxSpeed)
+                                        MathUtil.applyDeadband(dj.getLeftX(), 0.1) * MaxSpeed * driveSensitivity)
                                 .withRotationalRate(
                                         MathUtil.applyDeadband(-dj.getRightX(), 0.1)
                                                 * MaxAngularRate * rotationSensitivity)

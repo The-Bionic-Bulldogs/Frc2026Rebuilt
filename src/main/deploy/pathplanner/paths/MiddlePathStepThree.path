@@ -3,35 +3,42 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.0,
-        "y": 7.0
+        "x": 0.5585592011412266,
+        "y": 4.921298145506419
       },
       "prevControl": null,
       "nextControl": {
-        "x": 3.0,
-        "y": 7.0
+        "x": 0.41623395149785997,
+        "y": 6.150470756062767
       },
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "MiddlePathStepTwoEnd"
     },
     {
       "anchor": {
-        "x": 4.0,
-        "y": 6.0
+        "x": 0.5585592011412266,
+        "y": 6.926790299564089
       },
       "prevControl": {
-        "x": 3.0,
-        "y": 6.0
+        "x": 0.6491298145435376,
+        "y": 5.878758915826571
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "MiddlePathStepThreeEnd"
     }
   ],
   "rotationTargets": [],
   "constraintZones": [],
   "pointTowardsZones": [],
-  "eventMarkers": [],
+  "eventMarkers": [
+    {
+      "name": "Intake",
+      "waypointRelativePos": 0.023266856600189824,
+      "endWaypointRelativePos": null,
+      "command": null
+    }
+  ],
   "globalConstraints": {
     "maxVelocity": 3.0,
     "maxAcceleration": 3.0,
@@ -42,13 +49,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": -88.7546357332317
   },
   "reversed": false,
-  "folder": null,
+  "folder": "MiddlePaths",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": -88.95837332399005
   },
   "useDefaultConstraints": true
 }

@@ -5,8 +5,10 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 import frc.robot.Constants.IntakeConstants;
 import com.ctre.phoenix6.hardware.TalonFX;
+import com.ctre.phoenix6.signals.GravityTypeValue;
 import com.ctre.phoenix6.signals.NeutralModeValue;
 import com.ctre.phoenix6.configs.MotionMagicConfigs;
+import com.ctre.phoenix6.configs.SoftwareLimitSwitchConfigs;
 import com.ctre.phoenix6.configs.TalonFXConfiguration;
 import com.ctre.phoenix6.controls.MotionMagicVoltage;
 
@@ -19,22 +21,32 @@ public class IntakeSubsystem extends SubsystemBase {
 
     public void init()
     {
-        TalonFXConfiguration config = new TalonFXConfiguration();
-    var motionConfig = new MotionMagicConfigs();
-    motionConfig.MotionMagicCruiseVelocity = Constants.IntakeConstants.MaxVelocity; //38.5
-    motionConfig.MotionMagicAcceleration = Constants.IntakeConstants.MaxAcceleration; //507
-    config.MotionMagic = motionConfig;
+       var config = new TalonFXConfiguration();
 
-    config.Slot0.kP = 0.1;   // tune later
-    config.Slot0.kI = 0.0;
-    config.Slot0.kD = 0.0;
+       var softLimitConfig = new SoftwareLimitSwitchConfigs();
+    softLimitConfig.ForwardSoftLimitEnable = false;
+    softLimitConfig.ForwardSoftLimitThreshold = Constants.IntakeConstants.kSoftlimit;
+    softLimitConfig.ReverseSoftLimitEnable = true;
+    softLimitConfig.ReverseSoftLimitThreshold = Constants.IntakeConstants.kMinLimit;
+     config.SoftwareLimitSwitch = softLimitConfig;
 
-    intakerMotor.getConfigurator().apply(config);
+config.MotionMagic.MotionMagicCruiseVelocity = 0.8 * Constants.IntakeConstants.MaxVelocity;
+config.MotionMagic.MotionMagicAcceleration = 0.6 * Constants.IntakeConstants.MaxAcceleration;
 
-    intakerMotor.setPosition(0);
+config.Slot0.kP = 0.2;
+config.Slot0.kI = 0.0;
+config.Slot0.kD = 0.0;
 
-    intakeMotor.setNeutralMode(NeutralModeValue.Coast);
-    intakerMotor.setNeutralMode(NeutralModeValue.Brake);
+config.Slot0.kG = 0.35; // tune this
+config.Slot0.GravityType = GravityTypeValue.Arm_Cosine;
+
+config.CurrentLimits.SupplyCurrentLimit = 40;
+config.CurrentLimits.SupplyCurrentLimitEnable = true;
+
+intakerMotor.getConfigurator().apply(config);
+
+intakerMotor.setNeutralMode(NeutralModeValue.Brake);
+intakerMotor.setPosition(0);
     }
      
 

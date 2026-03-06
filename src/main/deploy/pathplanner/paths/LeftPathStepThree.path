@@ -1,0 +1,82 @@
+{
+  "version": "2025.0",
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 2.589928673323822,
+        "y": 1.8418972895863055
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 3.589928673323822,
+        "y": 1.8418972895863055
+      },
+      "isLocked": false,
+      "linkedName": "LeftpathStepTwoEnd"
+    },
+    {
+      "anchor": {
+        "x": 3.4956348074168466,
+        "y": 7.496091298139964
+      },
+      "prevControl": {
+        "x": 2.0572844451974612,
+        "y": 7.544575018214775
+      },
+      "nextControl": {
+        "x": 4.647175463622268,
+        "y": 7.4572753209645
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 7.02788873038381,
+        "y": 7.496091298139964
+      },
+      "prevControl": {
+        "x": 6.02788873038381,
+        "y": 7.496091298139964
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [
+    {
+      "waypointRelativePos": 1,
+      "rotationDegrees": 0.0
+    }
+  ],
+  "constraintZones": [],
+  "pointTowardsZones": [],
+  "eventMarkers": [
+    {
+      "name": "StopOuttake",
+      "waypointRelativePos": 0.23984010659559912,
+      "endWaypointRelativePos": null,
+      "command": null
+    }
+  ],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0,
+    "nominalVoltage": 12.0,
+    "unlimited": false
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 0.0
+  },
+  "reversed": false,
+  "folder": "LeftPaths",
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": 52.125016348901774
+  },
+  "useDefaultConstraints": true
+}

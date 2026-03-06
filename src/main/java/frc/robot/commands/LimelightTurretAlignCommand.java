@@ -1,6 +1,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj.Timer;
 import frc.robot.subsystems.Limelight;
 import frc.robot.subsystems.RotationSubsystem;
 import frc.robot.LimelightHelpers;
@@ -14,6 +15,9 @@ public class LimelightTurretAlignCommand extends Command {
     private int lockedTagId = -1;
     private int activePipeline = -1;
 
+    private final Timer pipelineTimer = new Timer();
+    private static final double PIPELINE_DELAY = 0.3; // 300ms
+
     public LimelightTurretAlignCommand(Limelight limelight, RotationSubsystem rotationSubsystem) {
         this.limelight = limelight;
         this.rotationSubsystem = rotationSubsystem;
@@ -24,21 +28,21 @@ public class LimelightTurretAlignCommand extends Command {
     public void initialize() {
         lockedTagId = -1;
         activePipeline = -1;
+        pipelineTimer.stop();
+        pipelineTimer.reset();
     }
 
     @Override
     public void execute() {
 
         if (!limelight.hasTarget()) {
-            lockedTagId = -1; // unlock
+            lockedTagId = -1;
             rotationSubsystem.rotateTurret(0.0);
             return;
         }
 
         int currentSeenTag = (int) limelight.getTagID();
 
-        // If no tag locked or locked tag is different than current visible tag,
-        // relock immediately
         if (lockedTagId == -1 || lockedTagId != currentSeenTag) {
             lockedTagId = currentSeenTag;
         }
@@ -50,10 +54,25 @@ public class LimelightTurretAlignCommand extends Command {
             return;
         }
 
+        // If pipeline changed, start delay timer
         if (desiredPipeline != activePipeline) {
             LimelightHelpers.setPipelineIndex("limelight-bb", desiredPipeline);
             activePipeline = desiredPipeline;
+
+            pipelineTimer.reset();
+            pipelineTimer.start();
+
+            rotationSubsystem.rotateTurret(0.0);
+            return; // skip aiming this cycle
         }
+
+        // Wait for pipeline to stabilize
+        if (pipelineTimer.isRunning() && pipelineTimer.get() < PIPELINE_DELAY) {
+            rotationSubsystem.rotateTurret(0.0);
+            return;
+        }
+
+        pipelineTimer.stop();
 
         double tx = limelight.getTX();
         double rotateSpeed = tx * Constants.TurretConstants.kP;
