@@ -37,12 +37,6 @@
       "waypointRelativePos": 0.2435897435897421,
       "endWaypointRelativePos": null,
       "command": null
-    },
-    {
-      "name": "ExtendIntaker",
-      "waypointRelativePos": 0.31006647673314686,
-      "endWaypointRelativePos": null,
-      "command": null
     }
   ],
   "globalConstraints": {

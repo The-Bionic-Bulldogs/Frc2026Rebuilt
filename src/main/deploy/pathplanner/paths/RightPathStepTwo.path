@@ -3,12 +3,12 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 3.09453637660485,
+        "x": 2.8357631954350926,
         "y": 2.7605420827389446
       },
       "prevControl": null,
       "nextControl": {
-        "x": 3.5991440798858774,
+        "x": 3.34037089871612,
         "y": 1.7642653352353794
       },
       "isLocked": false,
@@ -16,12 +16,12 @@
     },
     {
       "anchor": {
-        "x": 0.8949643366619111,
-        "y": 0.6386019971469341
+        "x": 0.4938659058487873,
+        "y": 0.6256633380884444
       },
       "prevControl": {
-        "x": 1.9429957203994292,
-        "y": 0.6903566333808839
+        "x": 1.5418972895863055,
+        "y": 0.6774179743223943
       },
       "nextControl": null,
       "isLocked": false,
@@ -35,12 +35,6 @@
     {
       "name": "StopOuttake",
       "waypointRelativePos": 0.2265156562291764,
-      "endWaypointRelativePos": null,
-      "command": null
-    },
-    {
-      "name": "Intake",
-      "waypointRelativePos": 0.42904730179880823,
       "endWaypointRelativePos": null,
       "command": null
     }
@@ -61,7 +55,7 @@
   "folder": "RightPaths",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 58.67130713219592
+    "rotation": 43.26429541107158
   },
   "useDefaultConstraints": true
 }

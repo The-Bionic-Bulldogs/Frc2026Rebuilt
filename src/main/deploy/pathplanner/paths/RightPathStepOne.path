@@ -8,27 +8,48 @@
       },
       "prevControl": null,
       "nextControl": {
-        "x": 3.91817228437364,
-        "y": 1.7283856423912343
+        "x": 3.1011478687559157,
+        "y": 2.8551733052029777
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 3.09453637660485,
+        "x": 2.3570328102710407,
+        "y": 2.191241084165479
+      },
+      "prevControl": {
+        "x": 2.6514487962832507,
+        "y": 2.575261935485754
+      },
+      "nextControl": {
+        "x": 2.05944365192582,
+        "y": 1.8030813124108418
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 2.8357631954350926,
         "y": 2.7605420827389446
       },
       "prevControl": {
-        "x": 2.853163955438672,
-        "y": 2.695431758669892
+        "x": 3.0732006150388105,
+        "y": 2.682289467626554
       },
       "nextControl": null,
       "isLocked": false,
       "linkedName": "RightPathStepOneEnd"
     }
   ],
-  "rotationTargets": [],
+  "rotationTargets": [
+    {
+      "waypointRelativePos": 1,
+      "rotationDegrees": 135.00000000000003
+    }
+  ],
   "constraintZones": [],
   "pointTowardsZones": [],
   "eventMarkers": [
@@ -40,7 +61,7 @@
     },
     {
       "name": "Outtake",
-      "waypointRelativePos": 0.983344437041965,
+      "waypointRelativePos": 2.0,
       "endWaypointRelativePos": null,
       "command": null
     }
@@ -55,7 +76,7 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 58.67130713219592
+    "rotation": 43.26429541107158
   },
   "reversed": false,
   "folder": "RightPaths",

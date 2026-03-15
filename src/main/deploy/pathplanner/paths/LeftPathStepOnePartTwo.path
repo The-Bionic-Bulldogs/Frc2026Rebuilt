@@ -3,13 +3,13 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.745192582025677,
-        "y": 5.555292439372327
+        "x": 1.5677746077032806,
+        "y": 6.836219686162625
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.4125106990014262,
-        "y": 6.650285306704709
+        "x": 0.23509272467902997,
+        "y": 7.931212553495008
       },
       "isLocked": false,
       "linkedName": "LeftPathStepOnePartOneEnd"
@@ -32,6 +32,22 @@
     },
     {
       "anchor": {
+        "x": 5.785777460770328,
+        "y": 7.560784593437946
+      },
+      "prevControl": {
+        "x": 5.216476462196862,
+        "y": 7.6125392296718974
+      },
+      "nextControl": {
+        "x": 6.343032400735847,
+        "y": 7.51012505344108
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
         "x": 7.791269614835947,
         "y": 6.991483594864479
       },
@@ -48,6 +64,26 @@
     {
       "waypointRelativePos": 1,
       "rotationDegrees": 0.0
+    },
+    {
+      "waypointRelativePos": 1,
+      "rotationDegrees": 0.0
+    },
+    {
+      "waypointRelativePos": 1,
+      "rotationDegrees": 0.0
+    },
+    {
+      "waypointRelativePos": 1,
+      "rotationDegrees": 0.0
+    },
+    {
+      "waypointRelativePos": 1,
+      "rotationDegrees": 0.0
+    },
+    {
+      "waypointRelativePos": 2,
+      "rotationDegrees": 0.0
     }
   ],
   "constraintZones": [],
@@ -56,12 +92,6 @@
     {
       "name": "StopOuttake",
       "waypointRelativePos": 0.29846768820786185,
-      "endWaypointRelativePos": null,
-      "command": null
-    },
-    {
-      "name": "ExtendIntaker",
-      "waypointRelativePos": 1.0911680911680801,
       "endWaypointRelativePos": null,
       "command": null
     }

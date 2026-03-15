@@ -24,7 +24,7 @@ public class IntakeSubsystem extends SubsystemBase {
        var config = new TalonFXConfiguration();
 
        var softLimitConfig = new SoftwareLimitSwitchConfigs();
-    softLimitConfig.ForwardSoftLimitEnable = false;
+    softLimitConfig.ForwardSoftLimitEnable = true;
     softLimitConfig.ForwardSoftLimitThreshold = Constants.IntakeConstants.kSoftlimit;
     softLimitConfig.ReverseSoftLimitEnable = true;
     softLimitConfig.ReverseSoftLimitThreshold = Constants.IntakeConstants.kMinLimit;
@@ -33,7 +33,7 @@ public class IntakeSubsystem extends SubsystemBase {
 config.MotionMagic.MotionMagicCruiseVelocity = 0.8 * Constants.IntakeConstants.MaxVelocity;
 config.MotionMagic.MotionMagicAcceleration = 0.6 * Constants.IntakeConstants.MaxAcceleration;
 
-config.Slot0.kP = 0.2;
+config.Slot0.kP = 1.1;
 config.Slot0.kI = 0.0;
 config.Slot0.kD = 0.0;
 

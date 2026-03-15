@@ -3,13 +3,13 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 0.8949643366619111,
-        "y": 0.6386019971469341
+        "x": 0.4938659058487873,
+        "y": 0.6256633380884444
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.3481848845869886,
-        "y": 0.9561488655965149
+        "x": 0.9470864537738648,
+        "y": 0.9432102065380252
       },
       "isLocked": false,
       "linkedName": "RightPathStepTwoEnd"
@@ -55,7 +55,7 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 55.58163552094373
+    "rotation": 106.69924423399358
   },
   "reversed": false,
   "folder": "RightPaths",

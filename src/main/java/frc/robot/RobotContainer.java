@@ -89,8 +89,8 @@ public class RobotContainer {
 
     private void configureBindings() {
 
-        double driveSensitivity = 0.5;
-        double rotationSensitivity = 0.5;
+        double driveSensitivity = 0.75;
+        double rotationSensitivity = 0.8;
 
         drivetrain.setDefaultCommand(
                 drivetrain.applyRequest(() ->

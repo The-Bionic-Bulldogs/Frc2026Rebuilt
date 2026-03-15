@@ -63,7 +63,7 @@
   "rotationTargets": [
     {
       "waypointRelativePos": 1,
-      "rotationDegrees": 89.14490260373329
+      "rotationDegrees": 89.1449026037333
     },
     {
       "waypointRelativePos": 2,
@@ -84,6 +84,12 @@
       "waypointRelativePos": 1.9027315123251092,
       "endWaypointRelativePos": null,
       "command": null
+    },
+    {
+      "name": "Outtake",
+      "waypointRelativePos": 2.9740173217854515,
+      "endWaypointRelativePos": null,
+      "command": null
     }
   ],
   "globalConstraints": {
@@ -96,7 +102,7 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 52.125016348901774
+    "rotation": 76.67546873810907
   },
   "reversed": false,
   "folder": "LeftPaths",

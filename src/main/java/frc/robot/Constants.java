@@ -26,33 +26,33 @@ public final class Constants {
     public static final int kTurretRotationMotorPort = 14;
     public static final int kFeederFirstMotorPort = 15;
     public static final int kFeederSecondMotorPort = 16;
-        public static final int kRollerMotorPort = 17;
+        public static final int kRollerMotorPort = 22;
     // PID values for turret rotation
     public static final double kP = 0.06;
     public static final double kI = 0.0;
     public static final double kD = 0.0;
-    public static final double kSoftlimit = 90.0; //placeholder value, needs to be tuned
-    public static final double kMinLimit = -125.0; //placeholder value, needs to be tuned
-    public static final double kStartingPos = 90.0;
+    public static final double kSoftlimit = 105.0; //placeholder value, needs to be tuned
+    public static final double kMinLimit = -28.0; //placeholder value, needs to be tuned
+    public static final double kStartingPos = 105.0;
     // Maximum rotation speed for the turret, needs to be tuned
-    public static final double kRotateSpeed = 0.52;
-    public static final double kOuttakeSpeed = 0.72;
+    public static final double kRotateSpeed = 1.0;
+    public static final double kOuttakeSpeed = 0.90; //60 close ta +1.026%, 63 far mid ta: +0.529%, 83 far ta: +0.099%
     public static final double kFeederSpeed = 1.0;
-    public static final double kRollerSpeed = 1.0;
+    public static final double kRollerSpeed = 0.2;
   }
 
   public static class IntakeConstants {
     public static final int kIntakeMotorPort = 18;
     public static final int kIntakerMotorPort = 19;
-    public static final double kIntakeSpeed = 0.5;
+    public static final double kIntakeSpeed = 0.65;
     public static final double kIntakerSpeed = 0.12; //placeholder value, needs to be tuned
     //intaker motion magic values
     public static final double MaxVelocity = 10.7;
     public static final double MaxAcceleration = 26.25;
-    public static final double ExtendedPosition = -21; //23
+    public static final double ExtendedPosition = -21.0; //23
     public static final double RetractedPosition = 0.0; //placeholder value
     public static final double kSoftlimit = 0.0; //placeholder value, needs to be tuned
-    public static final double kMinLimit = -18.0; //placeholder value, needs to be tuned
+    public static final double kMinLimit = -21.0; //placeholder value, needs to be tuned
   }
 
   public static class ClimberConstants {

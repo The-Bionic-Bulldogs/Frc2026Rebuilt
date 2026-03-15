@@ -8,20 +8,20 @@
       },
       "prevControl": null,
       "nextControl": {
-        "x": 3.8489170534440147,
-        "y": 6.0632825770722345
+        "x": 2.8487018544935796,
+        "y": 6.0081455064194005
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 2.745192582025677,
-        "y": 5.555292439372327
+        "x": 1.5677746077032806,
+        "y": 6.836219686162625
       },
       "prevControl": {
-        "x": 2.854817105028421,
-        "y": 5.779975469342151
+        "x": 2.2794008559201138,
+        "y": 6.370427960057061
       },
       "nextControl": null,
       "isLocked": false,
@@ -32,6 +32,12 @@
   "constraintZones": [],
   "pointTowardsZones": [],
   "eventMarkers": [
+    {
+      "name": "ExtendIntaker",
+      "waypointRelativePos": 0,
+      "endWaypointRelativePos": null,
+      "command": null
+    },
     {
       "name": "Outtake",
       "waypointRelativePos": 0.9806795469686886,
