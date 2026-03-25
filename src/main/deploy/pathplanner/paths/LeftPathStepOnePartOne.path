@@ -16,19 +16,40 @@
     },
     {
       "anchor": {
-        "x": 1.5677746077032806,
-        "y": 6.836219686162625
+        "x": 2.05944365192582,
+        "y": 6.499814550641941
       },
       "prevControl": {
-        "x": 2.2794008559201138,
-        "y": 6.370427960057061
+        "x": 2.331155492154065,
+        "y": 6.150470756062767
+      },
+      "nextControl": {
+        "x": 1.8048367209833873,
+        "y": 6.827166318996498
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 0.9725962910128385,
+        "y": 7.211440798858773
+      },
+      "prevControl": {
+        "x": 1.6842225392296712,
+        "y": 6.745649072753209
       },
       "nextControl": null,
       "isLocked": false,
       "linkedName": "LeftPathStepOnePartOneEnd"
     }
   ],
-  "rotationTargets": [],
+  "rotationTargets": [
+    {
+      "waypointRelativePos": 1,
+      "rotationDegrees": -11.592175410291093
+    }
+  ],
   "constraintZones": [],
   "pointTowardsZones": [],
   "eventMarkers": [
@@ -40,7 +61,7 @@
     },
     {
       "name": "Outtake",
-      "waypointRelativePos": 0.9806795469686886,
+      "waypointRelativePos": 1.9933377748167906,
       "endWaypointRelativePos": null,
       "command": null
     }
@@ -55,7 +76,7 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -42.51044707800091
+    "rotation": 0.0
   },
   "reversed": false,
   "folder": "LeftPaths",

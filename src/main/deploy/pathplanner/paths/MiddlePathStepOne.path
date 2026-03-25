@@ -16,11 +16,11 @@
     },
     {
       "anchor": {
-        "x": 1.9429957203994292,
+        "x": 1.7570843373493976,
         "y": 4.015592011412268
       },
       "prevControl": {
-        "x": 2.369971469329529,
+        "x": 2.1840600862794974,
         "y": 4.00265335235378
       },
       "nextControl": null,
@@ -33,14 +33,8 @@
   "pointTowardsZones": [],
   "eventMarkers": [
     {
-      "name": "ExtendIntaker",
-      "waypointRelativePos": 0.5089940039973326,
-      "endWaypointRelativePos": null,
-      "command": null
-    },
-    {
       "name": "Outtake",
-      "waypointRelativePos": 0.9786324786324717,
+      "waypointRelativePos": 0.988674217188538,
       "endWaypointRelativePos": null,
       "command": null
     }
@@ -55,7 +49,7 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 48.2397002961021
+    "rotation": 36.89317487208503
   },
   "reversed": false,
   "folder": "MiddlePaths",

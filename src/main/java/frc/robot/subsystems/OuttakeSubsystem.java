@@ -36,10 +36,11 @@ private final InterpolatingDoubleTreeMap shooterTable = new InterpolatingDoubleT
    //calls init
   public OuttakeSubsystem() {
     init();
-
+/* 
     shooterTable.put(1.026, 0.395); // close
-    shooterTable.put(0.529, 0.40); // mid
-    shooterTable.put(0.099, 0.69); // far
+    shooterTable.put(0.529, 0.39); // mid
+    shooterTable.put(0.17, 0.69); // far
+*/
   }
 
 public double getShooterSpeed() {
@@ -53,8 +54,8 @@ public double getShooterSpeed() {
 
     // Start shooter motor
     runOnce(() -> {
-      double speed = getShooterSpeed();
-      turretOuttakeMotor.set(speed);
+     // double speed = getShooterSpeed();
+      turretOuttakeMotor.set(Constants.TurretConstants.kOuttakeSpeed);
     }),
 
     // Wait half a second
@@ -62,9 +63,9 @@ public double getShooterSpeed() {
 
     // Run continuously until command is cancelled
     run(() -> {
-      double speed = getShooterSpeed();
+   //   double speed = getShooterSpeed();
 
-      turretOuttakeMotor.set(speed);
+      turretOuttakeMotor.set(Constants.TurretConstants.kOuttakeSpeed);
       FeederMotorOne.set(Constants.TurretConstants.kFeederSpeed);
       FeederMotorTwo.set(Constants.TurretConstants.kFeederSpeed);
       RollerMotor.set(Constants.TurretConstants.kRollerSpeed);

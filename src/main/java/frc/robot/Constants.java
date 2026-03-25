@@ -36,9 +36,9 @@ public final class Constants {
     public static final double kStartingPos = 105.0;
     // Maximum rotation speed for the turret, needs to be tuned
     public static final double kRotateSpeed = 1.0;
-    public static final double kOuttakeSpeed = 0.90; //60 close ta +1.026%, 63 far mid ta: +0.529%, 83 far ta: +0.099%
+    public static final double kOuttakeSpeed = 0.70; //60 close ta +1.026%, 63 far mid ta: +0.529%, 83 far ta: +0.099%
     public static final double kFeederSpeed = 1.0;
-    public static final double kRollerSpeed = 0.2;
+    public static final double kRollerSpeed = 0.3;
   }
 
   public static class IntakeConstants {

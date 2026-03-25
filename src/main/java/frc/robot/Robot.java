@@ -101,6 +101,5 @@ public class Robot extends TimedRobot {
 
   public void robotInit() {
     LimelightHelpers.setPipelineIndex("limelight-bb", 0);
-    CameraServer.startAutomaticCapture(); //start camera
   }
 }

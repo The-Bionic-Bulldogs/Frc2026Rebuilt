@@ -17,21 +17,20 @@ import static edu.wpi.first.units.Units.RotationsPerSecond;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 
 
 import frc.robot.generated.TunerConstants;
 import frc.robot.subsystems.*;
-import frc.robot.commands.*;
+
 
 public class RobotContainer {
 
     // Subsystems
-    private Limelight m_limelight = new Limelight();
+   // private Limelight m_limelight = new Limelight();
     private OuttakeSubsystem m_turretSubsystem = new OuttakeSubsystem();
     private IntakeSubsystem m_intakeSubsystem = new IntakeSubsystem();
-    private RotationSubsystem m_rotationSubsystem = new RotationSubsystem();
+   // private RotationSubsystem m_rotationSubsystem = new RotationSubsystem();
 
     public final CommandSwerveDrivetrain drivetrain =
             TunerConstants.createDrivetrain();
@@ -64,11 +63,11 @@ public class RobotContainer {
     private SendableChooser<Command> autoChooser = new SendableChooser<>();
 
     public RobotContainer() {
-
+/* 
     m_rotationSubsystem.setDefaultCommand(
         new LimelightTurretAlignCommand(m_limelight, m_rotationSubsystem)
     );
-
+*/
     
 
     autoChooser = AutoBuilder.buildAutoChooser("placeHolder");
@@ -89,15 +88,15 @@ public class RobotContainer {
 
     private void configureBindings() {
 
-        double driveSensitivity = 0.75;
+        double driveSensitivity = 1.0;
         double rotationSensitivity = 0.8;
 
         drivetrain.setDefaultCommand(
                 drivetrain.applyRequest(() ->
                         drive.withVelocityX(
-                                        MathUtil.applyDeadband(dj.getLeftY(), 0.1) * MaxSpeed * driveSensitivity)
+                                        MathUtil.applyDeadband(-dj.getLeftY(), 0.1) * MaxSpeed * driveSensitivity)
                                 .withVelocityY(
-                                        MathUtil.applyDeadband(dj.getLeftX(), 0.1) * MaxSpeed * driveSensitivity)
+                                        MathUtil.applyDeadband(-dj.getLeftX(), 0.1) * MaxSpeed * driveSensitivity)
                                 .withRotationalRate(
                                         MathUtil.applyDeadband(-dj.getRightX(), 0.1)
                                                 * MaxAngularRate * rotationSensitivity)
@@ -116,6 +115,7 @@ public class RobotContainer {
         oj.y().onTrue(m_intakeSubsystem.moveIntakerToPosition(Constants.IntakeConstants.ExtendedPosition));
         //Intaker Retract Button
         oj.a().onTrue(m_intakeSubsystem.moveIntakerToPosition(Constants.IntakeConstants.RetractedPosition));
+        oj.x().onTrue(m_intakeSubsystem.moveIntakerToPosition(-12.0));
 
       
         // Reset heading

@@ -8,24 +8,24 @@
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.313446676864376,
-        "y": 4.753095577746078
+        "x": 2.7570843373493976,
+        "y": 4.015592011412268
       },
       "isLocked": false,
       "linkedName": "MiddlePathStepOneEnd"
     },
     {
       "anchor": {
-        "x": 0.5585592011412266,
-        "y": 4.921298145506419
+        "x": 3.439951807228915,
+        "y": 4.015592011412268
       },
       "prevControl": {
-        "x": 1.9171184022824534,
-        "y": 5.412967189728959
+        "x": 2.439951807228915,
+        "y": 4.015592011412268
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "MiddlePathStepTwoEnd"
+      "linkedName": null
     }
   ],
   "rotationTargets": [],
@@ -34,7 +34,13 @@
   "eventMarkers": [
     {
       "name": "StopOuttake",
-      "waypointRelativePos": 0.2435897435897421,
+      "waypointRelativePos": 0.1092604930046634,
+      "endWaypointRelativePos": null,
+      "command": null
+    },
+    {
+      "name": "ExtendIntaker",
+      "waypointRelativePos": 0.756372549019599,
       "endWaypointRelativePos": null,
       "command": null
     }
@@ -49,13 +55,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -88.95837332399005
+    "rotation": 0.0
   },
   "reversed": false,
   "folder": "MiddlePaths",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 36.89317487208502
+    "rotation": 36.89317487208503
   },
   "useDefaultConstraints": true
 }
